@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+
 <html>
 	<head>
 		<title>DeadDrop</title>
@@ -29,8 +32,26 @@
 		</div>
 
 		<!-- Let's put in a timer here -->
+
 		<script type="text/javascript">
 
+var count = 30;
+var counter = setInterval(timer, 1000); 
+
+function timer() {
+    count = count - 1;
+    if (count <= 0) {
+        clearInterval(counter);
+        alert("Boom!");
+        document.getElementById('button').style.visibility = 'hidden';
+        return;
+    }
+
+    document.getElementById("timer").innerHTML = count + " secs";
+}
+
+		$("#buton").hide();
+
 		</script>
 		
 		<!-- Let's put in the geolocation stuff here -->
