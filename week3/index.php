@@ -17,6 +17,17 @@
 		
 		<table>
 		<!-- This is where we'll put all our content -->
+		<?php
+		
+	$query2 = "";
+	$result2 = mysql_query($query2);
+	$row2 = mysql_fetch_assoc($result2);
+
+	$name = $_POST["name"];
+	$book = $_POST["book"];
+	$email = $_POST["email"];
+
+		<?>
 		
 		</table>
 		
@@ -28,3 +39,5 @@
 		</script>
 	</body>
 </html>
+
+
