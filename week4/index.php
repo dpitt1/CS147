@@ -9,36 +9,46 @@
 		<meta name="viewport" content="width=device-width, user-scalable=no" />
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 		<link href="style.css" rel="stylesheet" type="text/css">
-		<link rel="stylesheet" href="chosen/chosen.css" />
-		<script src="chosen/chosen.jquery.js" type="text/javascript"></script>
-
 	</head>
 
 	<body>
-	<?php
-	echo "test";
-	?>
 	
 		<div class="banner"></div>
-			<?php
-				include("menu.php");
+		<?php
+		include("menu.php");
+		?>
+		
+		<?php
+			$link = mysql_connect('mysql-user-master.stanford.edu', 'ccs147dpitt1', 'kuapahji');
+			mysql_select_db('c_cs147_dpitt1');
 			?>
-		<div class="orderarea">
-		<!-- This is where we'll put our form -->
 		
-		
-		</div>
-			
+		<table>
+		<?php
+		//	include("config.php");
 
-  <script type="text/javascript">
-  $(".chzn-select").chosen();
-  </script> 
-  <script type="text/javascript">
+			
+			$query = "";
+
+			
+			
+			$query = "SELECT * FROM books";
+			$result = mysql_query($query);
+			while ($row = mysql_fetch_assoc($result)) {
+				echo "<tr><td><h2>".$row["title"]."</h2>";
+				echo "<p class='author'>".$row["author"]."</p>";
+				echo "<td><img width='100' class='pretty' src='".$row["image"]."' /></td></td>";
+			}
+
+			
+			?>
+		</table>
+		
+		<script type="text/javascript">
 		$("a").click(function (event) {
 		    event.preventDefault();
 		    window.location = $(this).attr("href");
 		});
-  </script>
- 
+		</script>
 	</body>
 </html>
