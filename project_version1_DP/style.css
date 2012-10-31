@@ -1,0 +1,87 @@
+
+
+#djpro_homecenter {
+	color:red;
+	width:100%;
+	text-align:center;
+	margin:0px auto;
+}
+
+.topButtonsBar {
+	height:30px; //magic number	
+}
+
+.settingsButton {
+	float:right;
+	width:40%;
+	height:30px;
+}
+
+.homeButton {
+	float:left;	
+	width:40%;
+	height:30px;
+
+}
+
+.bottomButtons {
+	position:absolute;
+	bottom:10px;
+	width:100%;
+	height:15%;
+}
+
+.beDjButton  {
+	width:80%;
+	margin:0px auto;
+	height:100%;
+//	left:0px auto;
+//	right:0px auto;
+	
+}
+.viewDjButton {
+	width:80%;
+	margin:0px auto;
+	height:100%;
+//	left:0px auto;
+//	right:0px auto;
+	
+}
+
+
+
+.beDjButtonHome  {
+	width:80%;
+	margin:5px auto;
+	height:80px;
+//	left:0px auto;
+//	right:0px auto;
+	
+}
+
+.viewDjButtonHome  {
+	width:80%;
+	margin:5px auto;
+	height:80px;
+//	left:0px auto;
+//	right:0px auto;
+	
+}
+
+.red {
+	color:red;	
+}
+
+
+		.nav-glyphish-example .ui-btn .ui-btn-inner { padding-top: 40px !important; }
+		.nav-glyphish-example .ui-btn .ui-icon { width: 30px!important; height: 30px!important; margin-left: -15px !important; box-shadow: none!important; -moz-box-shadow: none!important; -webkit-box-shadow: none!important; -webkit-border-radius: 0 !important; border-radius: 0 !important; }
+		#home .ui-icon { background:  url(glyphish-icons/53-house.png) 50% 50% no-repeat; background-size: 24px 22px; }
+		#key .ui-icon { background: url(glyphish-icons/30-key.png) 50% 50% no-repeat; background-size: 12px 26px; }
+		#email .ui-icon { background:  url(glyphish-icons/18-envelope.png) 50% 50% no-repeat; background-size: 24px 16px;  }
+		#login .ui-icon { background:  url(glyphish-icons/30-key.png) 50% 50% no-repeat;  background-size: 12px 26px; }
+		#beer .ui-icon { background:  url(glyphish-icons/88-beermug.png) 50% 50% no-repeat;  background-size: 22px 27px; }
+		#coffee .ui-icon { background:  url(glyphish-icons/100-coffee.png) 50% 50% no-repeat;  background-size: 20px 24px; }
+		#skull .ui-icon { background:  url(glyphish-icons/21-skull.png) 50% 50% no-repeat;  background-size: 22px 24px; }
+		#gear .ui-icon { background:  url(icons/19-gear@2x.png) 50% 50% no-repeat;  background-size: 22px 24px; }
+
+	
