@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -18,10 +19,7 @@
 		include("menu.php");
 		?>
 		
-		<?php
-			$link = mysql_connect('mysql-user-master.stanford.edu', 'ccs147dpitt1', 'kuapahji');
-			mysql_select_db('c_cs147_dpitt1');
-			?>
+
 		
 		<table>
 		<?php

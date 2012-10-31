@@ -29,8 +29,13 @@
 
 	<div data-role="content">
 	
-	<p>The form should go here</p>
-		<div data-role="fieldcontain">
+<form action="enter.php" method="post">
+	<label for="foo">Username:</label>
+	<input type="text" name="username" id="foo">
+	<label for="bar">Password:</label>
+	<input type="password" name="password" id="bar">
+        <input type="submit" value="Login">
+</form>		<div data-role="fieldcontain">
 			
 		</div>	
 	
@@ -46,7 +51,7 @@
 			<li><a href="index.php" id="home" data-icon="custom">Home</a></li>
 			<li><a href="login.php" id="key" data-icon="custom" class="ui-btn-active">Login</a></li>
 			<li><a href="filter.php" id="beer" data-icon="custom">Filter</a></li>
-			<li><a href="#" id="skull" data-icon="custom">Settings</a></li>
+			<li><a href="settings.php" id="skull" data-icon="custom">Settings</a></li>
 		</ul>
 		</div>
 	</div>

@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Multi-Page</title>
+</head>
+
+<body>
+
+<!-- Start of first page: #one -->
+<div id="one" data-role="page">
+	<div data-role="header">
+		<h1>Multi-Page</h1>
+	</div>
+	<!-- /header -->
+
+	<div data-role="content">
+		<h2>Welcome <span id="username"></span></h2>
+		<p>The neat thing about this example is that you can swipe right and 
+		left to navigate between pages, and you can also see in the code that 
+		the entire three page sequence within here is bundled into one page.</p>
+		<h3>Show internal pages:</h3>
+		<p><a data-role="button" href="#two">Show page &quot;two&quot;</a></p>
+		<p>
+		<a data-rel="dialog" data-role="button" data-transition="pop" href="#popup">
+		Show page &quot;popup&quot; (as a dialog)</a></p>
+	</div>
+	<!-- /content -->
+	
+	<div class="nav-glyphish-example" data-id="samebar" data-position="fixed" data-role="footer" data-tap-toggle="false">
+		<div class="nav-glyphish-example" data-grid="c" data-role="navbar">
+			<ul>
+				<li>
+				<a id="home" class="ui-btn-active" data-icon="custom" href="index.php">
+				Home</a></li>
+				<li><a id="key" data-icon="custom" href="login.php">Login</a></li>
+				<li><a id="beer" data-icon="custom" href="filter.php">Filter</a></li>
+				<li><a id="skull" data-icon="custom" href="#">Settings</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- /page one -->
+
+
+<!-- Start of second page: #two -->
+<div id="two" data-add-back-btn="true" data-role="page">
+	<div data-role="header">
+		<h1>Two</h1>
+	</div>
+	<!-- /header -->
+
+	<div data-role="content">
+		<h2>Two</h2>
+		<p>I have an id of &quot;two&quot; on my page container. I&#39;m the second page 
+		container in this multi-page template.</p>
+		<p>Notice that the theme is different for this page because we&#39;ve added 
+		a few <code>data-theme</code> swatch assigments here to show off how 
+		flexible it is. You can add any content or widget to these pages, but 
+		we&#39;re keeping these simple.</p>
+		<p>
+		<a data-direction="reverse" data-role="button" data-theme="b" href="#one">
+		Back to page &quot;one&quot;</a></p>
+	</div>
+	<!-- /content -->
+	
+	<div class="nav-glyphish-example" data-id="samebar" data-position="fixed" data-role="footer" data-tap-toggle="false">
+		<div class="nav-glyphish-example" data-grid="c" data-role="navbar">
+			<ul>
+				<li><a id="home" data-icon="custom" href="index.php">Home</a></li>
+				<li>
+				<a id="key" class="ui-btn-active" data-icon="custom" href="login.php">
+				Login</a></li>
+				<li><a id="beer" data-icon="custom" href="filter.php">Filter</a></li>
+				<li><a id="skull" data-icon="custom" href="#">Settings</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- /page two -->
+
+
+<!-- Start of third page: #popup -->
+<div id="popup" data-role="page">
+	<div data-role="header" data-theme="e">
+		<h1>Dialog</h1>
+	</div>
+	<!-- /header -->
+
+	<div data-role="content" data-theme="d">
+		<h2>Popup</h2>
+		<p>I have an id of &quot;popup&quot; on my page container and only look like a 
+		dialog because the link to me had a <code>data-rel=&quot;dialog&quot;</code> 
+		attribute which gives me this inset look and a <code>
+		data-transition=&quot;pop&quot;</code> attribute to change the transition to pop. 
+		Without this, I&#39;d be styled as a normal page.</p>
+		<p>
+		<a data-icon="back" data-inline="true" data-rel="back" data-role="button" href="#one">
+		Back to page &quot;one&quot;</a></p>
+	</div>
+	<!-- /content -->
+	
+	<div class="nav-glyphish-example" data-id="samebar" data-position="fixed" data-role="footer" data-tap-toggle="false">
+		<div class="nav-glyphish-example" data-grid="c" data-role="navbar">
+			<ul>
+				<li><a id="home" data-icon="custom" href="index.php">Home</a></li>
+				<li><a id="key" data-icon="custom" href="login.php">Login</a></li>
+				<li>
+				<a id="beer" class="ui-btn-active" data-icon="custom" href="filter.php">
+				Filter</a></li>
+				<li><a id="skull" data-icon="custom" href="#">Settings</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- /page popup -->
+
+<script type="text/javascript">
+// This handles all the swiping between each page. You really
+// needn't understand it all.
+$(document).on('pageshow', 'div:jqmData(role="page")', function(){
+
+     var page = $(this), nextpage, prevpage;
+     // check if the page being shown already has a binding
+      if ( page.jqmData('bound') != true ){
+            // if not, set blocker
+            page.jqmData('bound', true)
+            // bind
+                .on('swipeleft.paginate', function() {
+                    console.log("binding to swipe-left on "+page.attr('id'));
+                    nextpage = page.next('div[data-role="page"]');
+                    if (nextpage.length > 0) {
+                       $.mobile.changePage(nextpage,{transition: "slide"}, false, true);
+                        }
+                    })
+                .on('swiperight.paginate', function(){
+                    console.log("binding to swipe-right "+page.attr('id'));
+                    prevpage = page.prev('div[data-role="page"]');
+                    if (prevpage.length > 0) {
+                        $.mobile.changePage(prevpage, {transition: "slide",
+	reverse: true}, true, true);
+                        };
+                     });
+            }
+        });
+
+</script>
+
+</body>
+
+</html>

@@ -12,7 +12,7 @@
 
 	<link rel="stylesheet" href="style.css" />
 	<link rel="apple-touch-icon" href="appicon.png" />
-	<link rel="apple-touch-startup-image" href="upstart.png">
+	<link rel="apple-touch-startup-image" href="startup.png">
 	
 	<script src="jquery-1.8.2.min.js"></script>
 	<script src="jquery.mobile-1.2.0.js"></script>
@@ -21,6 +21,15 @@
 
 	
 <body> 
+
+
+		<?php
+			$link = mysql_connect('mysql-user-master.stanford.edu', 'ccs147dpitt1', 'kuapahji');
+			mysql_select_db('c_cs147_dpitt1');
+			?>
+			
+	<image><link rel="apple-touch-startup-image" href="startup.png"></image>
+
 
 <!-- Start of first page: #one -->
 <div data-role="page" id="one">
@@ -45,7 +54,7 @@
 				<li><a href="index.php" id="home" data-icon="custom" class="ui-btn-active">Home</a></li>
 				<li><a href="login.php" id="key" data-icon="custom">Login</a></li>
 				<li><a href="filter.php" id="beer" data-icon="custom">Filter</a></li>
-				<li><a href="#" id="skull" data-icon="custom">Settings</a></li>
+				<li><a href="settings.php" id="skull" data-icon="custom">Settings</a></li>
 			</ul>
 		</div>
 	</div>
